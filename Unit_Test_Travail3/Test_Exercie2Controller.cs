@@ -56,5 +56,21 @@ namespace Unit_Test_Travail3
             var viewResult = Assert.IsType<FileContentResult>(result);
             Assert.Equal("application/pdf", viewResult.ContentType);
         }
+
+        [Fact]
+        public void AfficherClients()
+        {
+            var exercice2Controller = new Exercice2Controller();
+            var result = exercice2Controller.AfficherClients();
+            Assert.IsType<JsonResult>(result);
+        }
+
+        [Fact]
+        public void Rediriger()
+        {
+            var exercice2Controller = new Exercice2Controller();
+            var result = exercice2Controller.Rediriger();
+            Assert.IsType<RedirectResult>(result);
+        }
     }
 }

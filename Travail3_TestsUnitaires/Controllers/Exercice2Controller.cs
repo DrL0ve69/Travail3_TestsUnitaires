@@ -26,12 +26,9 @@ namespace Travail3_TestsUnitaires.Controllers
                /Views/Shared/AfficherVue.cshtml
              */
         }
-        public string AfficherPdf()
+        public IActionResult AfficherPdf()
         {
-            
-            byte[] fileBytes = System.IO.File.ReadAllBytes("wwwroot/img");
-            string fileName = "horaire2025.pdf";
-            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName).ToString(); // Ne fonctionne pas
+            return new FileStreamResult(new FileStream(@"wwwroot/img/horaire2025.pdf", FileMode.Open, FileAccess.Read), "application/pdf"); // Ne fonctionne pas
         }
         public IActionResult AfficherClients() 
         {

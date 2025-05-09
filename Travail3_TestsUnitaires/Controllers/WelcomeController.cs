@@ -8,9 +8,9 @@ namespace Travail3_TestsUnitaires.Controllers
         {
             return View();
         }
-        public IActionResult WelcomeDefault() 
+        public string WelcomeDefault() 
         {
-            return Content("Bienvenue dans ma nouvelle application! ");
+            return "Bienvenue dans ma nouvelle application! ";
         }
         public IActionResult WelcomeName(string nom,string prenom) 
         {

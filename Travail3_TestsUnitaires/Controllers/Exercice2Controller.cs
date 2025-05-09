@@ -9,13 +9,13 @@ namespace Travail3_TestsUnitaires.Controllers
         {
             return View();
         }
-        public IActionResult Bienvenue() 
+        public string Bienvenue() 
         {
-            return Content("<h2>Bienvenu dans mon site web</h2>");
+            return "<h2>Bienvenu dans mon site web</h2>";
         }
         public ContentResult Bienvenue2()
         {
-            return Content("<h2>Bienvenu dans mon site web</h2>");
+            return Content("<h2>Bienvenu dans mon site web</h2>", "text/html");
         }
         public IActionResult AfficherVue() 
         {
@@ -28,7 +28,9 @@ namespace Travail3_TestsUnitaires.Controllers
         }
         public IActionResult AfficherPdf()
         {
-            return new FileStreamResult(new FileStream(@"wwwroot/img/horaire2025.pdf", FileMode.Open, FileAccess.Read), "application/pdf"); // Ne fonctionne pas
+
+            return File("~img/horaire2025.pdf", "application/pdf");
+            //new FileStreamResult(new FileStream(@"wwwroot/img/horaire2025.pdf", FileMode.Open, FileAccess.Read), "application/pdf"); /
         }
         public IActionResult AfficherClients() 
         {
@@ -42,6 +44,10 @@ namespace Travail3_TestsUnitaires.Controllers
             };
 
             return Json(listeClients);
+        }
+        public IActionResult Rediriger() 
+        {
+            return RedirectToAction("Bienvenue");
         }
     }
 }

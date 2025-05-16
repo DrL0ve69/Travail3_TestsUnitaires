@@ -29,4 +29,8 @@ app.MapControllerRoute(
     defaults: new { controller ="Welcome", action="WelcomeName"},
     pattern: "{controller=Welcome}/{nom}-{prenom}");
 
+app.MapControllerRoute(
+    name: "default3",
+    defaults: new { controller = "Exercice2", action = "AfficherVue" },
+    pattern: "{controller}/{action}");
 app.Run();

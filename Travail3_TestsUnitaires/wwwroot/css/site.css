@@ -20,3 +20,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+.carre {
+    width: 500px;
+    height: 500px;
+    background-image: url('../img/waluigiImg1.jpeg');
+    background-size: cover;
+}
